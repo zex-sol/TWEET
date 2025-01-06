@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memefinity Coin</title>
+    <title>$TWEET COIN</title>
     <style>
         body {
             margin: 0;
@@ -30,13 +30,14 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            animation: glow 2s infinite;
+            animation: glow 2s infinite, slideIn 1.5s ease-out;
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-top: 1rem;
             opacity: 0.8;
+            animation: fadeIn 3s ease-in-out;
         }
 
         @keyframes glow {
@@ -45,8 +46,19 @@
             100% { text-shadow: 0 0 10px #00e0ff, 0 0 20px #ff00e0; }
         }
 
+        @keyframes slideIn {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         .cta-buttons {
             margin-top: 2rem;
+            animation: fadeIn 4s ease-in-out;
         }
 
         .cta-buttons a {
@@ -65,6 +77,7 @@
             background: white;
             color: #2b2b45;
             box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
         }
 
         .floating-coins {
@@ -84,7 +97,7 @@
             background: linear-gradient(45deg, #ff00e0, #00e0ff);
             border-radius: 50%;
             opacity: 0.7;
-            animation: float 5s infinite ease-in-out;
+            animation: float 5s infinite ease-in-out, spin 3s linear infinite;
         }
 
         @keyframes float {
@@ -96,6 +109,15 @@
             }
             100% {
                 transform: translateY(0px);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
             }
         }
 
@@ -130,7 +152,7 @@
 </head>
 <body>
     <div class="hero">
-        <h1>Memefinity Coin</h1>
+        <h1>$TWEET COIN</h1>
         <p>The Future of Fun. Where memes meet the metaverse.</p>
         <div class="cta-buttons">
             <a href="#">Buy Now</a>
