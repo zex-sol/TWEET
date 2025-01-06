@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memefinity Coin</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(120deg, #1e1e2f, #2b2b45);
+            color: white;
+        }
 
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00e0ff, #ff00e0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: glow 2s infinite;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #00e0ff, 0 0 20px #ff00e0; }
+            50% { text-shadow: 0 0 20px #00e0ff, 0 0 30px #ff00e0; }
+            100% { text-shadow: 0 0 10px #00e0ff, 0 0 20px #ff00e0; }
+        }
+
+        .cta-buttons {
+            margin-top: 2rem;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            border: 2px solid white;
+            padding: 0.7rem 1.5rem;
+            margin: 0 1rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-buttons a:hover {
+            background: white;
+            color: #2b2b45;
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+        }
+
+        .floating-coins {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-coins div {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff00e0, #00e0ff);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating-coins div:nth-child(odd) {
+            animation-duration: 6s;
+        }
+
+        .floating-coins div:nth-child(even) {
+            animation-duration: 4s;
+        }
+
+        .floating-coins div:nth-child(1) {
+            top: 10%;
+            left: 20%;
+        }
+
+        .floating-coins div:nth-child(2) {
+            top: 30%;
+            left: 70%;
+        }
+
+        .floating-coins div:nth-child(3) {
+            top: 60%;
+            left: 40%;
+        }
+
+        .floating-coins div:nth-child(4) {
+            top: 80%;
+            left: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Memefinity Coin</h1>
+        <p>The Future of Fun. Where memes meet the metaverse.</p>
+        <div class="cta-buttons">
+            <a href="#">Buy Now</a>
+            <a href="#">Explore Whitepaper</a>
+        </div>
+        <div class="floating-coins">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
