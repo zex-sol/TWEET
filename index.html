@@ -181,8 +181,12 @@
         <h1>$TWEET COIN</h1>
         <p>What happens when everyone tweets out the CA of a coin? Join the experiment now!</p>
         <div class="cta-buttons">
-            <a href="#">Pumpfun</a>
+            
             <a href="https://x.com/intent/tweet?text=CA:%20" target="_blank">Tweet it out!</a>
+        </div>
+        <div class="copy-box" style="margin: 20px auto; text-align: center;">
+            <input id="copyText" type="text" value="CA: " readonly style="width: 300px; padding: 10px; border: 2px solid #ff7070; border-radius: 5px; background: black; color: white; margin-right: 10px;">
+            <button onclick="copyToClipboard()" style="padding: 10px 20px; background: #ff7070; color: white; border: none; border-radius: 5px; cursor: pointer;">Copy</button>
         </div>
         <div class="floating-coins">
             <div></div>
