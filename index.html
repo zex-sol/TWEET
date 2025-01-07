@@ -174,6 +174,36 @@
             font-size: 1.2rem;
             margin: 0.5rem 0;
         }
+
+        .copy-box {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .copy-box input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #00e0ff;
+            border-radius: 5px;
+            background: #1e1e2f;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .copy-box button {
+            padding: 10px 20px;
+            background: #00e0ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-box button:hover {
+            background: #ff00e0;
+            box-shadow: 0 0 10px #ff00e0;
+        }
     </style>
 </head>
 <body>
@@ -181,12 +211,11 @@
         <h1>$TWEET COIN</h1>
         <p>What happens when everyone tweets out the CA of a coin? Join the experiment now!</p>
         <div class="cta-buttons">
-            
             <a href="https://x.com/intent/tweet?text=CA:%20" target="_blank">Tweet it out!</a>
         </div>
-        <div class="copy-box" style="margin: 20px auto; text-align: center;">
-            <input id="copyText" type="text" value="CA: " readonly style="width: 300px; padding: 10px; border: 2px solid #ff7070; border-radius: 5px; background: black; color: white; margin-right: 10px;">
-            <button onclick="copyToClipboard()" style="padding: 10px 20px; background: #ff7070; color: white; border: none; border-radius: 5px; cursor: pointer;">Copy</button>
+        <div class="copy-box">
+            <input id="copyText" type="text" value="CA: " readonly>
+            <button onclick="copyToClipboard()">Copy</button>
         </div>
         <div class="floating-coins">
             <div></div>
@@ -205,4 +234,13 @@
         </ul>
     </div>
 </body>
+<script>
+    function copyToClipboard() {
+        var copyText = document.getElementById("copyText");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
 </html>
