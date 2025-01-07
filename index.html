@@ -11,6 +11,12 @@
             overflow-x: hidden;
             background: linear-gradient(120deg, #1e1e2f, #2b2b45);
             color: white;
+            animation: bgColorShift 10s infinite alternate;
+        }
+
+        @keyframes bgColorShift {
+            0% { background: linear-gradient(120deg, #1e1e2f, #2b2b45); }
+            100% { background: linear-gradient(120deg, #3e3e5f, #4b4b75); }
         }
 
         .hero {
@@ -31,7 +37,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            animation: glow 2s infinite, slideIn 1.5s ease-out;
+            animation: glow 2s infinite alternate, slideIn 1.5s ease-out;
         }
 
         .hero p {
@@ -43,8 +49,7 @@
 
         @keyframes glow {
             0% { text-shadow: 0 0 10px #00e0ff, 0 0 20px #ff00e0; }
-            50% { text-shadow: 0 0 20px #00e0ff, 0 0 30px #ff00e0; }
-            100% { text-shadow: 0 0 10px #00e0ff, 0 0 20px #ff00e0; }
+            100% { text-shadow: 0 0 20px #00e0ff, 0 0 30px #ff00e0; }
         }
 
         @keyframes slideIn {
@@ -74,6 +79,7 @@
             border-radius: 30px;
             transition: all 0.3s;
             display: inline-block;
+            animation: buttonGlow 3s infinite alternate;
         }
 
         .cta-buttons a:hover {
@@ -81,6 +87,11 @@
             color: #2b2b45;
             box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
             transform: scale(1.1);
+        }
+
+        @keyframes buttonGlow {
+            0% { box-shadow: 0 0 10px #00e0ff; }
+            100% { box-shadow: 0 0 20px #ff00e0; }
         }
 
         .floating-coins {
@@ -104,24 +115,14 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
 
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .floating-coins div:nth-child(odd) {
@@ -132,37 +133,19 @@
             animation-duration: 4s;
         }
 
-        .floating-coins div:nth-child(1) {
-            top: 10%;
-            left: 20%;
-        }
-
-        .floating-coins div:nth-child(2) {
-            top: 30%;
-            left: 70%;
-        }
-
-        .floating-coins div:nth-child(3) {
-            top: 60%;
-            left: 40%;
-        }
-
-        .floating-coins div:nth-child(4) {
-            top: 80%;
-            left: 10%;
-        }
-
         .stages {
             text-align: center;
             margin-top: 3rem;
             padding: 2rem;
             background: #2b2b45;
             color: white;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .stages h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            animation: glow 3s infinite alternate;
         }
 
         .stages ul {
@@ -173,6 +156,12 @@
         .stages ul li {
             font-size: 1.2rem;
             margin: 0.5rem 0;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
 
         .copy-box {
@@ -188,6 +177,7 @@
             background: #1e1e2f;
             color: white;
             margin-right: 10px;
+            animation: glow 3s infinite alternate;
         }
 
         .copy-box button {
@@ -198,6 +188,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s;
+            animation: buttonGlow 3s infinite alternate;
         }
 
         .copy-box button:hover {
