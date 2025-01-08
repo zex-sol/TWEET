@@ -181,9 +181,11 @@
 <script>
     function copyToClipboard() {
         var copyText = document.getElementById("copyText");
-         /* For mobile devices */
-        document.execCommand("copy");
-        
+        navigator.clipboard.writeText(copyText.value).then(function() {
+            console.log("Copied to clipboard successfully!");
+        }).catch(function(err) {
+            console.error("Could not copy text: ", err);
+        });
     }
 </script>
 </html>
