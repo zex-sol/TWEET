@@ -11,6 +11,19 @@
             overflow-x: hidden;
             background: linear-gradient(120deg, #1e1e2f, #2b2b45);
             color: white;
+            animation: backgroundShift 15s infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background: linear-gradient(120deg, #1e1e2f, #2b2b45);
+            }
+            50% {
+                background: linear-gradient(120deg, #3b3b5a, #48487a);
+            }
+            100% {
+                background: linear-gradient(120deg, #2b2b45, #1e1e2f);
+            }
         }
 
         .hero {
@@ -31,7 +44,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            animation: glow 2s infinite alternate;
+            animation: glow 2s infinite alternate, fadeIn 1.5s ease-out;
         }
 
         @keyframes glow {
@@ -43,6 +56,12 @@
             font-size: 1.5rem;
             margin-top: 1rem;
             opacity: 0.9;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .cta-buttons {
@@ -60,6 +79,12 @@
             padding: 0.7rem 1.5rem;
             border-radius: 30px;
             transition: all 0.3s;
+            animation: buttonPulse 2s infinite alternate;
+        }
+
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 5px #ff00e0; }
+            100% { box-shadow: 0 0 15px #00e0ff; }
         }
 
         .cta-buttons a:hover {
@@ -79,6 +104,7 @@
         .info-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            animation: glow 2s infinite alternate;
         }
 
         .info-section p {
@@ -86,6 +112,7 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .stages {
@@ -94,12 +121,12 @@
             padding: 2rem;
             background: #2b2b45;
             color: white;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .stages h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            animation: glow 2s infinite alternate;
         }
 
         .stages ul {
@@ -112,89 +139,22 @@
             margin: 0.5rem 0;
         }
 
-        .copy-box {
-            margin: 20px auto;
+        .experiment-outline {
             text-align: center;
-        }
-
-        .copy-box input {
-            width: 300px;
-            padding: 10px;
-            border: 2px solid #00e0ff;
-            border-radius: 5px;
+            padding: 2rem;
             background: #1e1e2f;
             color: white;
-            margin-right: 10px;
+            animation: fadeIn 3s ease-in-out;
         }
 
-        .copy-box button {
-            padding: 10px 20px;
-            background: #00e0ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .copy-box button:hover {
-            background: #ff00e0;
-            box-shadow: 0 0 10px #ff00e0;
-        }
-
-        .testimonials {
-            padding: 4rem 2rem;
-            background: #1e1e2f;
-            text-align: center;
-            color: white;
-        }
-
-        .testimonials h2 {
+        .experiment-outline h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .testimonials p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            font-style: italic;
-        }
-
-        .data-section {
-            padding: 4rem 2rem;
-            background: #2b2b45;
-            text-align: center;
-            color: white;
-        }
-
-        .data-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .data-section .metrics {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .data-section .metric {
-            background: #1e1e2f;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            width: 150px;
-        }
-
-        .data-section .metric h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .data-section .metric p {
+        .experiment-outline ul {
+            list-style: none;
+            padding: 0;
             font-size: 1.2rem;
         }
     </style>
@@ -231,30 +191,15 @@
         </ul>
     </div>
 
-    <div class="testimonials">
-        <h2>What People Are Saying</h2>
-        <p>"I've never seen anything like this before. The power of collective action is mind-blowing!"</p>
-        <p>"$FOMO Coin proves that community-driven projects can truly create waves."</p>
-        <p>"This is more than just a coin; it's a movement."</p>
+    <div class="experiment-outline">
+        <h2>Experiment Outline</h2>
+        <ul>
+            <li><strong>Independent Variable:</strong> Number of tweets</li>
+            <li><strong>Dependent Variable:</strong> Price of $FOMO</li>
+            <li><strong>Control Group:</strong> Nonexposed Twitter users</li>
+        </ul>
     </div>
 
-    <div class="data-section">
-        <h2>Experiment Metrics</h2>
-        <div class="metrics">
-            <div class="metric">
-                <h3>Tweets</h3>
-                <p>10,235</p>
-            </div>
-            <div class="metric">
-                <h3>Participants</h3>
-                <p>5,780</p>
-            </div>
-            <div class="metric">
-                <h3>Price Movement</h3>
-                <p>+250%</p>
-            </div>
-        </div>
-    </div>
 </body>
 <script>
     function copyToClipboard() {
