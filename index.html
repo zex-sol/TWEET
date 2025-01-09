@@ -69,208 +69,39 @@
             transform: scale(1.1);
         }
 
-        .info-section, .faq-section, .how-to-participate, .community-section {
+        .info-section {
             padding: 4rem 2rem;
             background: #2b2b45;
             text-align: center;
+            color: white;
         }
 
-        .info-section h2, .faq-section h2, .how-to-participate h2, .community-section h2 {
+        .info-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .info-section p, .faq-section p, .how-to-participate p, .community-section p {
+        .info-section p {
             font-size: 1.2rem;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .stages ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .stages ul li {
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
-        }
-
-        .faq-section ul, .how-to-participate ul {
-            list-style-type: none;
-            padding: 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-section ul li, .how-to-participate ul li {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="hero">
-        <h1>$FOMO COIN</h1>
-        <p>What happens when everyone tweets out the CA of a coin? Join the experiment now!</p>
-        <div class="cta-buttons">
-            <a href="https://x.com/intent/tweet?text=CA:%20" target="_blank">Tweet it out!</a>
-        </div>
-        <div class="copy-box">
-            <input id="copyText" type="text" value="CA: " readonly>
-            <button onclick="copyToClipboard()">Copy</button>
-        </div>
-    </div>
-
-    <div class="info-section">
-        <h2>About the Experiment</h2>
-        <p>
-            $FOMO Coin is not just another cryptocurrency; it's an experiment in social behavior and digital value creation.
-            The idea is simple yet revolutionary: everyone tweets out the contract address (CA) of the coin, creating
-            unparalleled visibility and engagement. As more people join in and share the CA, the experiment becomes a living,
-            breathing entity powered by collective action. The question is, how far can it go?
-        </p>
-    </div>
-
-    <div class="stages">
-        <h2>STAGES</h2>
-        <ul>
-            <li>1.) Launch $FOMO coin</li>
-            <li>2.) Everyone tweets out the CA</li>
-            <li>3.) Watch as the price goes up</li>
-        </ul>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-            <li><strong>What is $FOMO Coin?</strong> $FOMO Coin is an experimental cryptocurrency designed to test the power of collective social behavior.</li>
-            <li><strong>How can I participate?</strong> Simply tweet out the contract address (CA) and encourage others to join the movement!</li>
-            <li><strong>Is this a serious investment?</strong> No, this is purely experimental and should not be treated as a financial investment.</li>
-        </ul>
-    </div>
-
-    <div class="how-to-participate">
-        <h2>How to Participate</h2>
-        <ul>
-            <li>1. Copy the contract address using the "Copy" button above.</li>
-            <li>2. Tweet out the contract address with your own message to engage your followers.</li>
-            <li>3. Watch the collective action as more people join the experiment!</li>
-        </ul>
-    </div>
-
-    <div class="community-section">
-        <h2>Join the Community</h2>
-        <p>
-            Connect with others participating in the experiment! Share your experiences, memes, and updates using the hashtag
-            <strong>#FOMOCoin</strong> on Twitter. Let's make this a movement powered by people.
-        </p>
-    </div>
-
-</body>
-<script>
-    function copyToClipboard() {
-        var copyText = document.getElementById("copyText").value; // Get the value of the input box
-        navigator.clipboard.writeText(copyText) // Use the clipboard API to copy the value
-            .then(() => {
-                console.log("Text copied successfully!");
-            })
-            .catch(err => {
-                console.error("Failed to copy text: ", err);
-            });
-    }
-</script>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$FOMO COIN</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-            background: linear-gradient(120deg, #1e1e2f, #2b2b45);
+        .stages {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #2b2b45;
             color: white;
         }
 
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #00e0ff, #ff00e0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+        .stages h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             animation: glow 2s infinite alternate;
         }
 
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #00e0ff, 0 0 20px #ff00e0; }
-            100% { text-shadow: 0 0 20px #00e0ff, 0 0 30px #ff00e0; }
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .cta-buttons a {
-            text-decoration: none;
-            font-size: 1.2rem;
-            color: white;
-            border: 2px solid white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 30px;
-            transition: all 0.3s;
-        }
-
-        .cta-buttons a:hover {
-            background: white;
-            color: #2b2b45;
-            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-        }
-
-        .info-section, .faq-section, .how-to-participate, .community-section {
-            padding: 4rem 2rem;
-            background: #2b2b45;
-            text-align: center;
-        }
-
-        .info-section h2, .faq-section h2, .how-to-participate h2, .community-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-section p, .faq-section p, .how-to-participate p, .community-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .stages ul {
             list-style: none;
             padding: 0;
@@ -281,16 +112,90 @@
             margin: 0.5rem 0;
         }
 
-        .faq-section ul, .how-to-participate ul {
-            list-style-type: none;
-            padding: 0;
-            max-width: 800px;
-            margin: 0 auto;
+        .copy-box {
+            margin: 20px auto;
+            text-align: center;
         }
 
-        .faq-section ul li, .how-to-participate ul li {
+        .copy-box input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #00e0ff;
+            border-radius: 5px;
+            background: #1e1e2f;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .copy-box button {
+            padding: 10px 20px;
+            background: #00e0ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-box button:hover {
+            background: #ff00e0;
+            box-shadow: 0 0 10px #ff00e0;
+        }
+
+        .testimonials {
+            padding: 4rem 2rem;
+            background: #1e1e2f;
+            text-align: center;
+            color: white;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonials p {
             font-size: 1.2rem;
-            margin: 1rem 0;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+        }
+
+        .data-section {
+            padding: 4rem 2rem;
+            background: #2b2b45;
+            text-align: center;
+            color: white;
+        }
+
+        .data-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .data-section .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .data-section .metric {
+            background: #1e1e2f;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .data-section .metric h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-section .metric p {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -326,32 +231,30 @@
         </ul>
     </div>
 
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-            <li><strong>What is $FOMO Coin?</strong> $FOMO Coin is an experimental cryptocurrency designed to test the power of collective social behavior.</li>
-            <li><strong>How can I participate?</strong> Simply tweet out the contract address (CA) and encourage others to join the movement!</li>
-            <li><strong>Is this a serious investment?</strong> No, this is purely experimental and should not be treated as a financial investment.</li>
-        </ul>
+    <div class="testimonials">
+        <h2>What People Are Saying</h2>
+        <p>"I've never seen anything like this before. The power of collective action is mind-blowing!"</p>
+        <p>"$FOMO Coin proves that community-driven projects can truly create waves."</p>
+        <p>"This is more than just a coin; it's a movement."</p>
     </div>
 
-    <div class="how-to-participate">
-        <h2>How to Participate</h2>
-        <ul>
-            <li>1. Copy the contract address using the "Copy" button above.</li>
-            <li>2. Tweet out the contract address with your own message to engage your followers.</li>
-            <li>3. Watch the collective action as more people join the experiment!</li>
-        </ul>
+    <div class="data-section">
+        <h2>Experiment Metrics</h2>
+        <div class="metrics">
+            <div class="metric">
+                <h3>Tweets</h3>
+                <p>10,235</p>
+            </div>
+            <div class="metric">
+                <h3>Participants</h3>
+                <p>5,780</p>
+            </div>
+            <div class="metric">
+                <h3>Price Movement</h3>
+                <p>+250%</p>
+            </div>
+        </div>
     </div>
-
-    <div class="community-section">
-        <h2>Join the Community</h2>
-        <p>
-            Connect with others participating in the experiment! Share your experiences, memes, and updates using the hashtag
-            <strong>#FOMOCoin</strong> on Twitter. Let's make this a movement powered by people.
-        </p>
-    </div>
-
 </body>
 <script>
     function copyToClipboard() {
