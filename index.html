@@ -60,6 +60,24 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        .scroll-down {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: white;
+            opacity: 0.8;
+            animation: fadeIn 3s ease-in-out infinite alternate;
+        }
+
+        .scroll-down::after {
+            content: "\2193"; /* Down arrow */
+            display: block;
+            font-size: 2rem;
+            margin-top: 5px;
+        }
+
         .cta-buttons {
             margin-top: 2rem;
             display: flex;
@@ -167,6 +185,7 @@
             <input id="copyText" type="text" value="CA: " readonly>
             <button onclick="copyToClipboard()">Copy</button>
         </div>
+        <div class="scroll-down">Scroll down</div>
     </div>
 
     <div class="stages">
@@ -180,12 +199,14 @@
 </body>
 <script>
     function copyToClipboard() {
-        var copyText = document.getElementById("copyText");
-        navigator.clipboard.writeText(copyText.value).then(function() {
-            console.log("Copied to clipboard successfully!");
-        }).catch(function(err) {
-            console.error("Could not copy text: ", err);
-        });
+        var copyText = document.getElementById("copyText").value; // Get the value of the input box
+        navigator.clipboard.writeText(copyText) // Use the clipboard API to copy the value
+            .then(() => {
+                console.log("Text copied successfully!");
+            })
+            .catch(err => {
+                console.error("Failed to copy text: ", err);
+            });
     }
 </script>
 </html>
